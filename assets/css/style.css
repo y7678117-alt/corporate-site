@@ -1,0 +1,212 @@
+/* ===== 基本設定 ===== */
+:root{
+  --brand:#1A73E8;
+  --brand-light:#EAF3FF;
+  --ink:#111;
+  --body:#333;
+  --bg:#fff;
+  --max:1100px;
+  --radius-xl:30px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family:"Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color:var(--body);
+  background:var(--bg);
+  line-height:1.8;
+  -webkit-text-size-adjust:100%;
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color:var(--brand); text-decoration:none; }
+a:focus-visible, button:focus-visible{ outline:2px solid var(--brand); outline-offset:2px; }
+
+.container{ max-width:var(--max); margin:0 auto; padding:0 16px; }
+.skip-link{
+  position:absolute; left:-999px; top:auto;
+}
+.skip-link:focus{ left:16px; top:16px; background:#fff; padding:8px 12px; border:1px solid #ddd; }
+
+/* ===== Header ===== */
+.site-header{ position:sticky; top:0; z-index:40; background:#fff; border-bottom:1px solid #eee; }
+.header__inner{ display:flex; align-items:center; justify-content:space-between; height:56px; }
+.logo{ font-weight:700; color:var(--ink); }
+
+/* ナビ（モバイル） */
+.nav-toggle{
+  width:40px; height:40px; display:inline-grid; place-items:center;
+  background:#fff; border:1px solid #ddd; border-radius:8px; cursor:pointer;
+}
+.nav-toggle__bar{ width:18px; height:2px; background:#333; display:block; margin:3px 0; }
+
+.global-nav{ position:fixed; inset:56px 0 0 0; background:#fff; display:none; padding:24px; }
+.global-nav.is-open{ display:block; }
+.global-nav ul{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.global-nav a{ color:var(--ink); font-weight:600; }
+
+/* ===== Hero ===== */
+.hero{ position:relative; min-height:56vh; display:grid; place-items:center; overflow:hidden; }
+.hero img{ width:100%; height:100%; object-fit:cover; object-position:top center; position: absolute; inset:0; }
+.hero__overlay{ position:absolute; inset:0; background:rgba(0,0,0,.25); }
+.hero__content{ position:relative; z-index:1; text-align:center; color:#fff; padding:48px 0; }
+.hero__title{ font-size:clamp(22px, 6vw, 32px); line-height:1.4; margin:0 0 8px; font-weight:700; }
+.hero__lead{ margin:0 0 16px; font-size:clamp(14px, 3.5vw, 16px); }
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-block; padding:12px 20px; border-radius:12px; border:1px solid transparent;
+  font-weight:700; text-align:center; min-width:200px;
+}
+.btn--lg{ padding:14px 24px; border-radius:25px; min-width:260px; }
+.btn--primary{ background:var(--brand); color:#fff; }
+.btn--primary:hover{ filter:brightness(0.95); }
+
+/* ===== Sections ===== */
+.section{ padding:64px 0; }
+.section__title{ font-size:24px; text-align:center; color:var(--ink); margin:0; }
+.section__bar{ display:block; width:64px; height:2px; background:var(--brand); margin:12px auto 24px; }
+
+/* ===== About ===== */
+.about__grid{ display:grid; gap:20px; }
+.about__text p{ margin:0 0 8px; }
+
+/* ===== Services ===== */
+.services{ background:linear-gradient(180deg, #fff 0%, var(--brand-light) 100%); }
+.card-list{
+  list-style:none; padding:0; margin:24px 0 0; display:grid; gap:20px;
+}
+.card{
+  background:#fff; border:1px solid #e5eefc; border-radius:var(--radius-xl);
+  padding:24px; text-align:center; box-shadow:0 1px 0 rgba(26,115,232,0.08);
+}
+.card__icon{ width:72px; height:72px; margin:0 auto 12px; }
+.card__title{ margin:0 0 8px; font-size:20px; color:var(--ink); }
+.card__text{ margin:0; }
+
+/* ===== CTA ===== */
+.cta{ background:#fff; text-align:center; }
+.cta__lead{ font-weight:700; font-size:18px; margin:0 0 12px; }
+.company{ font-style:normal; color:#444; margin-top:16px; }
+
+/* ===== Footer ===== */
+.site-footer{ border-top:1px solid #eee; }
+.footer__inner{ text-align:center; padding:20px 0; color:#444; }
+
+/* ===== Utilities ===== */
+.sp-br{ display:inline; }
+
+/* ===== 768px以上（タブレット〜PC） ===== */
+@media (min-width: 768px){
+  .header__inner{ height:64px; }
+  .nav-toggle{ display:none; }
+  .global-nav{ position:static; display:block; padding:0; }
+  .global-nav ul{ display:flex; gap:24px; }
+  .global-nav a{ padding:8px 0; }
+
+  .hero{ min-height:68vh; }
+  .hero__title{ font-size:42px; }
+  .hero__lead{ font-size:18px; }
+  .sp-br{ display:none; }
+
+  .about__grid{ grid-template-columns:1.1fr 1fr; align-items:center; gap:28px; }
+
+  .card-list{ grid-template-columns:repeat(3, 1fr); gap:24px; }
+}
+/* ================================
+   A11y Add-on
+   ================================ */
+
+/* 1) フォーカス可視化（全要素） */
+:root {
+  --focus: #1A73E8;           /* フォーカスリング色 */
+  --focus-shadow: rgba(26,115,232,.35);
+  --outline-w: 3px;
+}
+
+/* マウス操作時は出しすぎない／キーボード時に明確に */
+:focus { outline: none; }
+:focus-visible {
+  outline: var(--outline-w) solid var(--focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--focus-shadow);
+  border-radius: 6px;
+}
+
+/* スキップリンクを確実に見せる */
+.skip-link {
+  position: absolute; left: -999px; top: auto;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 16px; top: 16px;
+  background: #fff; color: #111;
+  padding: 10px 14px; border: 1px solid #ccc;
+  z-index: 1000; border-radius: 8px;
+}
+
+/* 2) コントラストを底上げ */
+:root{
+  --ink:#111;        /* 見出しなど濃色 */
+  --body:#2B2B2B;    /* 本文：#333より僅かに濃く */
+}
+body { color: var(--body); }
+.section__title { color: var(--ink); }
+
+/* リンクの状態を明確に（hover/focus/visited） */
+a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { filter: brightness(0.95); }
+a:focus-visible { text-decoration-thickness: 3px; }
+
+/* 3) ボタンのアクセシビリティ */
+.btn{
+  font-weight: 700;
+  min-height: 48px;             /* タップしやすい高さ */
+  line-height: 1.2;
+  letter-spacing: .02em;
+}
+.btn--primary{
+  background: var(--brand);
+  color: #fff;
+  border: 2px solid var(--brand);
+}
+.btn--primary:hover { filter: brightness(.95); }
+.btn--primary:active { transform: translateY(1px); }
+
+/* 4) ナビゲーション（開閉中の可視状態＋キーボード） */
+.nav-toggle:focus-visible { outline-offset: 4px; }
+.global-nav a {
+  display: inline-block;
+  padding: 10px 4px;
+}
+.global-nav a:focus-visible {
+  background: var(--brand-light);
+  border-radius: 6px;
+}
+
+/* 5) 画像の代替（装飾アイコンはフォーカス不要） */
+.card__icon { pointer-events: none; }
+
+/* 6) アニメーションの抑制（動きに弱いユーザー配慮） */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* 7) ハイコントラスト環境（Windowsの強制ハイコントラスト等） */
+@media (forced-colors: active) {
+  :focus-visible { outline: 2px solid CanvasText; box-shadow: none; }
+  .btn--primary { forced-color-adjust: none; background: ButtonText; color: Canvas; border-color: ButtonText; }
+}
+
+/* 8) フォームのヒット領域とラベル間隔（将来のcontactに備え） */
+label { display: block; margin: 10px 0 6px; }
+input, textarea, select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #C9D4EA;
+  border-radius: 8px;
+}
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline-offset: 3px;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>株式会社〇〇食品｜毎日の食卓に、安心とぬくもりを。</title>
+  <meta name="description" content="株式会社〇〇食品のコーポレートサイト。食品製造・OEM対応・海外輸出についてご紹介しています。" />
+
+  <!-- フォントとCSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- リセット（任意） -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <!-- メインCSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+  <!-- Skip Link（Tab1回目で本文へジャンプ） -->
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header__inner">
+      <a class="logo" href="/" aria-label="株式会社〇〇食品 トップへ">株式会社〇〇食品</a>
+
+      <!-- ハンバーガー -->
+      <button class="nav-toggle" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- ナビ -->
+      <nav id="global-nav" class="global-nav" role="navigation" aria-label="グローバルナビゲーション">
+        <ul>
+          <li><a href="#about">私たちについて</a></li>
+          <li><a href="#services">事業内容</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="main" role="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="メインビジュアル">
+      <!-- 背景画像：上を優先表示（CSSでobject-position: top center） -->
+      <img src="assets/img/hero.png" alt="家族の食卓の写真" width="1600" height="900" loading="eager">
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <h1 class="hero__title">毎日の食卓に、<span class="sp-br"><br></span>安心とぬくもりを。</h1>
+        <p class="hero__lead">創業〇〇年。受け継いだ伝統の味を、これからも。</p>
+        <p><a class="btn btn--primary btn--lg" href="#contact">お問い合わせ</a></p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section__title">私たちについて</h2>
+        <span class="section__bar" aria-hidden="true"></span>
+
+        <div class="about__grid">
+          <div class="about__image">
+            <img src="assets/img/about.png" alt="会社外観・伝統的な建物の写真" width="1200" height="800" loading="lazy">
+          </div>
+          <div class="about__text">
+            <p>長年にわたり培った経験と確かな実績をもとに、</p>
+            <p>お客様の多様なニーズに応える食品づくりを推進し、</p>
+            <p>社会に貢献する企業であり続けます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section services" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title" class="section__title">事業内容</h2>
+        <span class="section__bar" aria-hidden="true"></span>
+
+        <ul class="card-list" role="list">
+          <li class="card">
+            <img class="card__icon" src="assets/img/icon-manufacture.png" alt="" aria-hidden="true" width="72" height="72">
+            <h3 class="card__title">食品製造</h3>
+            <p class="card__text">
+              厳選した原料と徹底した品質管理に基づき、<br>
+              安全で信頼できる食品を安定的に生産しています。
+            </p>
+          </li>
+
+          <li class="card">
+            <img class="card__icon" src="assets/img/icon-oem.png" alt="" aria-hidden="true" width="72" height="72">
+            <h3 class="card__title">OEM対応</h3>
+            <p class="card__text">
+              豊富な経験と柔軟な生産体制を活かし、<br>
+              お客様のブランド価値を高める製品開発をサポートします。
+            </p>
+          </li>
+
+          <li class="card">
+            <img class="card__icon" src="assets/img/icon-export.png" alt="" aria-hidden="true" width="72" height="72">
+            <h3 class="card__title">海外輸出</h3>
+            <p class="card__text">
+              国際規格に準拠した品質基準を満たし、<br>
+              世界の市場に向けて日本の食品をお届けしています。
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contact" class="section cta" aria-label="お問い合わせ">
+      <div class="container cta__inner">
+        <p class="cta__lead">ご相談・お見積もりはお気軽に</p>
+        <!-- 本番ではフォーム or 別ページへ。暫定はmailto:でもOK -->
+        <p><a class="btn btn--primary btn--lg" href="mailto:info@example.com">お問い合わせはこちら</a></p>
+
+        <address class="company">
+          〒000-0000 〇〇県〇〇市〇〇 0-0-0<br>
+          TEL：00-0000-0000<br>
+          受付時間 10:00〜19:00（平日）
+          <a href="https://x.com/" target="_blank" rel="noopener">X（旧Twitter）</a>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo" aria-label="サイトフッター">
+    <div class="container footer__inner">
+      <small>&copy; 2025 株式会社〇〇食品 Inc.</small>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* ========================================
+   🧱 Base CSS Reset + Common Settings
+   (Lightweight, Modern, Accessible)
+   ======================================== */
+
+/* 1. ボックスサイズを統一（余白ズレ防止） */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. 余白・リスト・見出しなど初期化 */
+html, body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. ベースフォント設定 */
+body {
+  font-family: "Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 4. メディア要素のサイズ調整 */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. リンクの初期設定（下線を外してブランド色に） */
+a {
+  color: #1A73E8;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 6. フォーム類の統一 */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  border-radius: 0;
+}
+
+/* 7. スムーズスクロールとフォーカス改善 */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+:focus-visible {
+  outline: 2px solid #1A73E8;
+  outline-offset: 2px;
+}
+
+/* 8. コンテナ（全体レイアウト中央寄せ） */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* 9. スキップリンク（アクセシビリティ対応） */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+}
+.skip-link:focus, .skip-link:focus-visible {
+  left: 16px;
+  top: 16px;
+  background: #fff;
+  color: #111;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+/* 10. アニメーションを苦手な人向け対応 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
